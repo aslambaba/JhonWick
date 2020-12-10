@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -11,5 +13,13 @@ module.exports = {
         src: '/2Checkout.js', // Change to the script filename
       },
     },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Price'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true,
+      }
+    }
   ],
 }

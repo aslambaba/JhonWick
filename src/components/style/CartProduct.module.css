@@ -1,0 +1,13 @@
+
+.MainTable{
+    width: 100%;
+}
+.BodyTR{
+    margin: 10px 0px;
+}
+.BodyTD{
+    border: none !important;
+    padding: 20px 10px;
+    border: 1px solid gray;
+    background-color: green;
+}

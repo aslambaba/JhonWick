@@ -1,47 +1,35 @@
 import React from "react"
 import { useShoppingCart } from 'use-shopping-cart'
+import Header from '../components/header';
+import Landingpage from '../components/landingPage';
+import Featureproduct from '../components/featureProduct';
+import {graphql, useStaticQuery} from 'gatsby';
 
-function IndexPage(){
-  let productt = window.TwoCoInlineCart.products.list;
-  console.log(window.TwoCoInlineCart.products.list)
-  const { addItem, cartCount } = useShoppingCart();
+function IndexPage() {
 
-  const p = {
-    name: 'aslam',
-    quantity: 1,
-    price: 22,
-  }
+  
+  const { addItem, cartDetails } = useShoppingCart()
 
-  return(
-    <div>
-      <h1>Hello</h1>
-      <button onClick={()=>{
-        window.TwoCoInlineCart.setup.setMode('DYNAMIC');
-        window.TwoCoInlineCart.cart.setCurrency('USD');
-       
-        window.TwoCoInlineCart.products.add({
-          name: 'A test dynamic product',
-          quantity: 1,
-          price: 20,
-        });
-
-        console.log(window.TwoCoInlineCart.products.list)
-      }}>Click</button>
-      <button onClick={()=>{
-        addItem(p);
-        }}>click</button>
-    <p>{cartCount}</p>
-      {
-        Object.keys(productt).map((obj)=>{
-          return(
-            <div>
-
-          <p>{productt[obj].name}</p>
-            
-            </div>
-          )
-        })
+  const gqlData = useStaticQuery(graphql`
+  query MyQuery {
+      allStripePrice {
+        nodes {
+          id
+          product {
+            images
+            id
+            name
+          }
+        }
       }
+    }      
+  `);
+  const Products = gqlData.allStripePrice.nodes;
+  return (
+    <div>
+      <Header />
+      <Landingpage />      
+      <Featureproduct Products={Products} addItem={addItem} cartDetails={cartDetails}/>
     </div>
   )
 }
