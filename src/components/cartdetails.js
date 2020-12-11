@@ -1,6 +1,11 @@
 import React from 'react';
-import Style from './style/CartProduct.module.css'
-function CartDetails({ CartD, clearCart, removeItem }) {
+import Style from './style/CartProduct.module.css';
+import { useShoppingCart } from 'use-shopping-cart';
+
+function CartDetails() {
+    const { cartDetails, clearCart, removeItem, totalPrice } = useShoppingCart()
+    console.log(cartDetails)
+    const CartD = Object.entries(cartDetails)
     return (
         <div>
             <div>
@@ -20,14 +25,15 @@ function CartDetails({ CartD, clearCart, removeItem }) {
                     {
                         Object.keys(CartD).map(obj => {
                             const cartData = CartD[obj];
+                            console.log(cartData);
                             return (
 
                                 <tr className={Style.BodyTR} key={cartData[0]}>
                                     <td></td>
                                     <td className={Style.BodyTD}>{cartData[1].name}</td>
                                     <td className={Style.BodyTD}>{cartData[1].quantity}</td>
-                                    <td className={Style.BodyTD}>{cartData[1].price}</td>
-                                    <td className={Style.BodyTD}><button onClick={()=> removeItem(cartData[0])}>Click</button></td>
+                                    <td className={Style.BodyTD}>{`$${cartData[1].price}.00`}</td>
+                                    <td className={Style.BodyTD}><button onClick={()=> removeItem(cartData[1].id)}>Click</button></td>
                                 </tr>
                             )
                         })
@@ -35,6 +41,10 @@ function CartDetails({ CartD, clearCart, removeItem }) {
 
                 </tbody>
             </table>
+            <div>
+                <h1>{`$${totalPrice}.00 USD`}</h1>
+                <button>Checkout</button>
+            </div>
         </div>
     )
 }
