@@ -1,7 +1,7 @@
 import React from 'react';
 import Style from './style/CartProduct.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
-
+import {Link } from 'gatsby';
 function CartDetails() {
     const { cartDetails, clearCart, removeItem, totalPrice } = useShoppingCart()
     console.log(cartDetails)
@@ -43,7 +43,8 @@ function CartDetails() {
             </table>
             <div>
                 <h1>{`$${totalPrice}.00 USD`}</h1>
-                <button>Checkout</button>
+                <Link to='/Checkout'><button>Checkout</button></Link>
+                
             </div>
         </div>
     )
