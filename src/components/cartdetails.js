@@ -43,7 +43,7 @@ function CartDetails() {
             </table>
             <div>
                 <h1>{`$${totalPrice}.00 USD`}</h1>
-                <Link to='/Checkout'><button>Checkout</button></Link>
+                <Link to='/checkout'><button>Checkout</button></Link>
                 
             </div>
         </div>

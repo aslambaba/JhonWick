@@ -1,5 +1,5 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const stripe = require('stripe')('pk_test_51Hr8RFEAxjBMcLOop6ah7qFNyuJzOjKU12Xu2f986khPIR12WVZ2xlvkKfG2l4ueBIfFGgHcdmd3r2CbLe483Mjk00tDQwG0xw');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const handler = async (event) => {
   try {
