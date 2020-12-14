@@ -11,7 +11,7 @@ function CartDetails() {
             <div>
                 <button onClick={clearCart}>Clear Cart</button>
             </div>
-            <table className={Style.MainTable}>
+            <table className={Style.MainTable} cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
                         <td></td>
@@ -41,13 +41,14 @@ function CartDetails() {
 
                 </tbody>
             </table>
-            <div>
-                <h1>{`$${totalPrice}.00 USD`}</h1>
+            <div className={Style.Billing}>
+                <h3>Total: </h3>
+                <h3>{`$${totalPrice}.00 USD`}</h3>
                 <Link to='/checkout'><button>Checkout</button></Link>
-                
             </div>
         </div>
     )
 }
 
 export default CartDetails;
+

@@ -20,6 +20,17 @@ module.exports = {
         secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: true,
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Limelight`,
+          `Source Sans Pro`,
+          `Andika New Basic`,
+        ],
+        display: 'swap'
+      }
     }
   ],
 }

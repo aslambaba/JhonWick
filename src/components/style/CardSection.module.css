@@ -1,0 +1,39 @@
+h2{
+    color: white;
+    margin: 20px 0px;
+}
+.MainCheckoutSec{
+    padding: 50px 0px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #212121;
+}
+.CheckoutForm{
+    margin: 0 auto;
+    padding: 20px 20px;
+    background-color: white;
+    border-radius: 5px;
+    width: 60%;
+}
+.CheckoutForm input{
+    padding: 10px 20px;
+    display: block;
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 3px;
+}
+.CheckoutForm button{
+    margin: 20px 0px;
+    padding: 8px 20px;
+    background-color: #212121;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+.MainH{
+    text-align: center;
+}
+.BottomM{
+    margin-bottom: 30px;
+}

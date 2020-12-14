@@ -1,8 +1,6 @@
-/**
-* Use the CSS tab above to style your Element's container.
-*/
+
 import React from 'react';
-import {CardElement} from '@stripe/react-stripe-js';
+import { CardElement  } from '@stripe/react-stripe-js';
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
@@ -10,9 +8,9 @@ const CARD_ELEMENT_OPTIONS = {
       color: "#32325d",
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: "antialiased",
-      fontSize: "16px",
+      fontSize: "20px",
       "::placeholder": {
-        color: "#aab7c4",
+        color: "black",
       },
     },
     invalid: {
@@ -20,14 +18,24 @@ const CARD_ELEMENT_OPTIONS = {
       iconColor: "#fa755a",
     },
   },
+  opp: {
+    width: "10px",
+  },
+  MM: {
+    display: "inline-block",
+    width: "30px",
+    h3: {
+      margin: '0',
+    }
+  }
 };
 
 function CardSection() {
   return (
-    <label>
-      Card details
+    <div>
       <CardElement options={CARD_ELEMENT_OPTIONS} />
-    </label>
+    </div>
+
   );
 };
 

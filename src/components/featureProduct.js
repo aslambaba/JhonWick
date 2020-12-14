@@ -6,7 +6,7 @@ function FeatureProduct({ Pro }) {
     const { addItem } = useShoppingCart();
     const Products = Pro.nodes;
     return (
-        <div>
+        <div className={Style.MainProSec}>
             <div className={Style.Fheading}>
                 <h1>Feature Product</h1>
             </div>
@@ -27,11 +27,7 @@ function FeatureProduct({ Pro }) {
                                 <p>{Products[object].product.name}</p>
                                 <p>{`$${itemPrice}.00 USD`}</p>
                                 <div>
-
-                                    <button className={Style.AddMinBTN}>-</button>
-                                    <p className={Style.AddMinTXT}>1</p>
-                                    <button className={Style.AddMinBTN}>+</button>
-                                    <button onClick={() => { addItem(CustomProduct) }}>Add to Cart</button>
+                                    <button className={Style.Add2Chart} onClick={() => { addItem(CustomProduct) }}>Add to Cart</button>
                                 </div>
                             </div>
                         )

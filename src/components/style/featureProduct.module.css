@@ -1,16 +1,31 @@
+.MainProSec{
+    background-color: #212121;
+    padding: 20px 0;
+}
 .Fheading{
     text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.Fheading h1{
+    margin: 0;
+    color: white;
 }
 .ProductSec{
     text-align: center;
+    padding: 20px 0px;
 }
 .ProductItem{
-    border: 1px solid black;
+    border: none;
+    border-radius: 4px;
     text-align: center;
     width: 25%;
     padding: 20px 10px;
     display: inline-block;
+    background-color: white;
     margin: 20px 10px;
+}
+.ProductItem p{
+    font-family: 'Andika New Basic', sans-serif;
 }
 .ProductItem img{
     width: 100%;
@@ -22,4 +37,7 @@
 }
 .AddMinTXT{
     display: inline-block;
+}
+.Add2Chart{
+    padding: 5px 10px;
 }

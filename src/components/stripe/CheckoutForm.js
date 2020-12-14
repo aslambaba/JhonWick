@@ -1,9 +1,15 @@
 import React from 'react';
-import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
-
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import Style from '../style/CardSection.module.css'
 import CardSection from './CardSection';
 
+import { useShoppingCart } from 'use-shopping-cart';
+
+
 export default function CheckoutForm() {
+
+  
+  const {clearCart } = useShoppingCart()
   const stripe = useStripe();
   const elements = useElements();
 
@@ -19,7 +25,7 @@ export default function CheckoutForm() {
     }
 
 
-    const ID = await fetch('/.netlify/functions/checkout', {method: "post"});
+    const ID = await fetch('/.netlify/functions/checkout', { method: "post" });
     const Data = await ID.json();
     console.log(Data);
     const result = await stripe.confirmCardPayment(Data.client_secret, {
@@ -43,15 +49,27 @@ export default function CheckoutForm() {
         // execution. Set up a webhook or plugin to listen for the
         // payment_intent.succeeded event that handles any business critical
         // post-payment actions.
-        console.log('Yahoo')
+        console.log('Yahoo');
+        clearCart();
+        alert('Congratulations - Payment Succesfully Recieved !!')
+        window.location.replace("/");
+        
       }
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <CardSection />
-      <button disabled={!stripe}>Confirm order</button>
-    </form>
+    <div className={Style.MainCheckoutSec}>
+      <h2 className={Style.MainH}>Checkout</h2>
+      <form onSubmit={handleSubmit} className={Style.CheckoutForm}>
+        <input placeholder="Name" />
+        <input placeholder="Email Address" />
+        <input placeholder="Phone Number" />
+        <input placeholder="Address" className={Style.BottomM}/>
+        <CardSection />
+        <button disabled={!stripe}>Confirm order</button>
+      </form>
+    </div>
+
   );
 }

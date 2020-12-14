@@ -3,6 +3,7 @@ import Header from '../components/header';
 import Landingpage from '../components/landingPage';
 import Featureproduct from '../components/FeatureProduct';
 import {graphql, useStaticQuery} from 'gatsby';
+import Style from './style/index.module.css';
 
 function IndexPage() {
 
@@ -25,7 +26,7 @@ function IndexPage() {
   `);
   const Products = gqlData.allStripePrice;
   return (
-    <div>
+    <div className={Style.MainContainer}>
       <Header />
       <Landingpage />      
       <Featureproduct Pro={Products}/>
