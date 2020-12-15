@@ -1,7 +1,7 @@
 import React from 'react';
 import Style from './style/landingpage.module.css';
 
-function landingPage(){
+function Landingpage(){
     return(
         <div className={Style.main}>
             
@@ -9,4 +9,4 @@ function landingPage(){
     )
 };
 
-export default landingPage;
+export default Landingpage;

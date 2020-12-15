@@ -1,8 +1,8 @@
 import React from 'react';
-import Style from './style/Featureproduct.module.css';
+import Style from './style/featureproduct.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
 
-function featureproduct({ Pro }) {
+function Featureproduct({ Pro }) {
 
     const { addItem } = useShoppingCart();
     const Products = Pro.nodes;
@@ -38,4 +38,4 @@ function featureproduct({ Pro }) {
     )
 }
 
-export default featureproduct;
+export default Featureproduct;
