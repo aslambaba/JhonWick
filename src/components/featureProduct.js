@@ -1,6 +1,7 @@
 import React from 'react';
-import Style from './style/featureProduct.module.css';
+import Style from './style/featureproduct.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
+
 function FeatureProduct({ Pro }) {
 
     const { addItem } = useShoppingCart();
