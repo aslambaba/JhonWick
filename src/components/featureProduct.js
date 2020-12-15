@@ -2,7 +2,7 @@ import React from 'react';
 import Style from './style/featureproduct.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
 
-function FeatureProduct({ Pro }) {
+function featureproduct({ Pro }) {
 
     const { addItem } = useShoppingCart();
     const Products = Pro.nodes;
@@ -38,4 +38,4 @@ function FeatureProduct({ Pro }) {
     )
 }
 
-export default FeatureProduct;
+export default featureproduct;
