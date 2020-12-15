@@ -1,8 +1,9 @@
 import React from 'react'
 import { CartProvider } from 'use-shopping-cart'
 import { loadStripe } from '@stripe/stripe-js'
-
-const stripePromise = loadStripe('pk_test_51Hr8RFEAxjBMcLOop6ah7qFNyuJzOjKU12Xu2f986khPIR12WVZ2xlvkKfG2l4ueBIfFGgHcdmd3r2CbLe483Mjk00tDQwG0xw');
+const dotenv = require('dotenv');
+dotenv.config();
+const stripePromise = loadStripe(React.App.process.env.STRIPE_PUBLISH_KEY);
 
 export const wrapPageElement = ({ element })=> {
     

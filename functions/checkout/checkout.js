@@ -1,11 +1,12 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 
-const stripe = require('stripe')('sk_test_51Hr8RFEAxjBMcLOouNwcfCVPxQGNJJaEYmVXmHXR5DBNwLxkfaBAMiDdyk6uCrMIlVoOisjjtOGyaX4SiAEkMIoT00V67JiBu0');
-const handler = async () => {
-  
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const handler = async (event) => {
+  const data = event.body;
+  console.log(data);
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 1111,
+      amount: parseInt(data),
       currency: 'usd',
       // Verify your integration in this guide by including this parameter
       metadata: { integration_check: 'accept_a_payment' },

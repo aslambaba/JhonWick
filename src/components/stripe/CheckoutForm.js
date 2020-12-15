@@ -9,7 +9,7 @@ import { useShoppingCart } from 'use-shopping-cart';
 export default function CheckoutForm() {
 
   
-  const {clearCart } = useShoppingCart()
+  const {clearCart,totalPrice} = useShoppingCart()
   const stripe = useStripe();
   const elements = useElements();
 
@@ -25,7 +25,10 @@ export default function CheckoutForm() {
     }
 
 
-    const ID = await fetch('/.netlify/functions/checkout', { method: "post" });
+    const ID = await fetch('/.netlify/functions/checkout',
+    { method: "post",
+      body: parseInt(totalPrice),
+  });
     const Data = await ID.json();
     console.log(Data);
     const result = await stripe.confirmCardPayment(Data.client_secret, {
@@ -53,7 +56,6 @@ export default function CheckoutForm() {
         clearCart();
         alert('Congratulations - Payment Succesfully Recieved !!')
         window.location.replace("/");
-        
       }
     }
   };

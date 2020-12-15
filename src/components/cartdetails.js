@@ -32,7 +32,7 @@ function CartDetails() {
                                     <td></td>
                                     <td className={Style.BodyTD}>{cartData[1].name}</td>
                                     <td className={Style.BodyTD}>{cartData[1].quantity}</td>
-                                    <td className={Style.BodyTD}>{`$${cartData[1].price}.00`}</td>
+                                    <td className={Style.BodyTD}>{`$${cartData[1].price/100}.00`}</td>
                                     <td className={Style.BodyTD}><button onClick={()=> removeItem(cartData[1].id)}>Click</button></td>
                                 </tr>
                             )
@@ -43,7 +43,7 @@ function CartDetails() {
             </table>
             <div className={Style.Billing}>
                 <h3>Total: </h3>
-                <h3>{`$${totalPrice}.00 USD`}</h3>
+                <h3>{`$ ${parseInt(totalPrice/100)}.00`}</h3>
                 <Link to='/checkout'><button>Checkout</button></Link>
             </div>
         </div>
