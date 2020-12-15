@@ -17,7 +17,6 @@ function IndexPage() {
           images
           id
           name
-          description
         }
         unit_amount
       }

@@ -19,6 +19,7 @@
     border-radius: 4px;
     text-align: center;
     width: 25%;
+    min-height: '300px';
     padding: 20px 10px;
     display: inline-block;
     background-color: white;
