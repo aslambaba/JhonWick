@@ -1,7 +1,7 @@
 import React from "react"
 import Header from '../components/header';
-import Landingpage from '../components/LandingPage';
-import Featureproduct from '../components/Featureproduct';
+import Landingpage from '../components/landingpage';
+import Featureproduct from '../components/featureproduct';
 import {graphql, useStaticQuery} from 'gatsby';
 import Style from './style/index.module.css';
 
