@@ -1,6 +1,6 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-require('dotenv').config();
-const stripe = require('stripe')(React.App.process.env.STRIPE_SECRET_KEY);
+
+const stripe = require('stripe')('sk_test_51Hwv4MJxGPfhLM6wzX1WI41aQS0SEJsONqemgX9dvJi2zW73xSHCmtbagFIfkoGfUkLr6oprYFe2VaR8mqAzcKqs00N49njrRs');
 const handler = async (event) => {
   const data = event.body;
   console.log(data);
