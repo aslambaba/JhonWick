@@ -27,7 +27,7 @@ export default function CheckoutForm() {
 
     const ID = await fetch('/.netlify/functions/checkout',
     { method: "post",
-      body: parseInt(totalPrice),
+      body: Long.parseLong(totalPrice),
   });
     const Data = await ID.json();
     console.log(Data);
