@@ -7,6 +7,6 @@ function Landingpage(){
             
         </div>
     )
-};
+}
 
 export default Landingpage;
