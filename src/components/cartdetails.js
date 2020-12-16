@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './style/CartProduct.module.css';
+import Style from './style/cartproduct.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
 import {Link } from 'gatsby';
 function CartDetails() {
