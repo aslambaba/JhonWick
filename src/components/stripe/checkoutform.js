@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import Style from '../style/CardSection.module.css'
-import CardSection from './CardSection';
+import Style from '../style/cardSection.module.css'
+import CardSection from './cardSection';
 
 import { useShoppingCart } from 'use-shopping-cart';
 
