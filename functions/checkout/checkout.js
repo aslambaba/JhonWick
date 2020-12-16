@@ -6,7 +6,7 @@ const handler = async (event) => {
   console.log(data);
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: parseInt(data),
+      amount: Long.parseLong(data),
       currency: 'usd',
       // Verify your integration in this guide by including this parameter
       metadata: { integration_check: 'accept_a_payment' },
