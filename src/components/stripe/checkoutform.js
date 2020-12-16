@@ -27,7 +27,7 @@ export default function CheckoutForm() {
 
     const ID = await fetch('/.netlify/functions/checkout',
     { method: "post",
-      body: Long.parseLong(totalPrice),
+      body: parseInt(totalPrice),
   });
     const Data = await ID.json();
     console.log(Data);
@@ -55,7 +55,7 @@ export default function CheckoutForm() {
         console.log('Yahoo');
         clearCart();
         alert('Congratulations - Payment Succesfully Recieved !!')
-        window.location.replace("/");
+        window.location.href= "/"
       }
     }
   };
